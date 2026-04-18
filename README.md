@@ -101,6 +101,10 @@ streamlit run app.py
 - Filtering logic:	Path restriction
 - Final method:	Highlighted column
 
+### Deployed Links
+- The Decision Matrix Match: https://stoping-method-selection-tool-umwkkegulmzywoveapsnmi.streamlit.app
+- The Closest Possible Match: https://stoping-method-selection-tool-axudi3grvdiubogfhddtlv.streamlit.app
+
 ---
 
 ## Key Insight
