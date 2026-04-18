@@ -179,6 +179,11 @@ if st.session_state.step < len(parameters):
             st.error("Not economical to mine (No matching method)")
             st.stop()
 
+        # 🔥 NEW: EARLY STOP CONDITION
+        if len(st.session_state.valid_methods) == 1:
+            st.session_state.step = len(parameters)  # Jump to result
+            st.rerun()
+
         st.session_state.step += 1
         st.rerun()
 
@@ -191,8 +196,8 @@ else:
     for method in st.session_state.valid_methods:
         st.write(f"- {method}")
 
-    if len(st.session_state.valid_methods) == 1:
-        st.success(f"Recommended Method: {st.session_state.valid_methods[0]}")
+    # Always show recommendation
+    st.success(f"Recommended Method: {st.session_state.valid_methods[0]}")
 
     st.write("### Selected Conditions:")
     st.write(st.session_state.selections)
